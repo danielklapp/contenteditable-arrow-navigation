@@ -1,6 +1,7 @@
 import { getCaretIndexFromElement } from "./getCaretIndexFromElement";
 
-export function addArrowKeyNavigationToContenteditableElements({ verbose }) {
+export function addArrowKeyNavigationToContenteditableElements(props) {
+  const { verbose } = props || {};
   const elements = getContenteditableElements();
 
   addArrowKeyNavigationToElements({ elements, verbose })
