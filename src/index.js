@@ -26,11 +26,11 @@ export function addArrowKeyNavigationToElement({ element, verbose=false }) {
     if (verbose) console.log({ key, position, length });
     
     if (key === "ArrowUp" && position === 0){
-      event.target.previousElementSibling.focus();
+      event.target.previousElementSibling?.focus();
     };
     
     if (key === "ArrowDown" && position === length){
-      event.target.nextElementSibling.focus();
+      event.target.nextElementSibling?.focus();
     };
   });
 };
