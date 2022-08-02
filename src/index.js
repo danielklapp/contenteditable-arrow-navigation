@@ -22,14 +22,15 @@ export function addArrowKeyNavigationToElement({ element, verbose=false }) {
   element.addEventListener("keydown", (event) => {
     const { key, target } = event;
     const position = getCaretIndexFromElement({ element: target });
-    const length = event.target.innerText.length;
+    // to get length, with and without prewrap to work, trim unrendered final linebreak
+    const length = event.target.innerText.replace(/\n$/, '').length;
     if (verbose) console.log({ key, position, length });
     
     if (key === "ArrowUp" && position === 0){
       event.target.previousElementSibling?.focus();
     };
-    
-    if (key === "ArrowDown" && position === length){
+    // position may excede length when pre-wrap is not used
+    if (key === "ArrowDown" && position >= length){
       event.target.nextElementSibling?.focus();
     };
   });
