@@ -1,9 +1,13 @@
 {
   "name": "contenteditable-arrow-navigation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A utility to make multiple content editable elements easier to navigate with arrows.",
   "source": "src/index.js",
   "main": "dist/main.js",
+  "files": [
+    "dist/main.js",
+    "dist/main.js.map"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "parcel watch",
